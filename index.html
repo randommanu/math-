@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+<title>Tabuada da Manu</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#F4F5FB">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg2:#F4F5FB;--card2:#fff;--tx2:#14172B;--mut2:#7A7F96;--ac2:#6B5CE7;--line2:#E8EAF3;--c12:#D3EBE1;--c22:#FBD3E3;--c32:#DCCFF2;--c42:#FBE2CF;--ok2:#3FB58A;--bl2:#6FA8E8;--pe2:#F5A67F;--sh2:0 8px 24px rgba(60,50,120,.08)}
+:root[data-t2=dark]{--bg2:#0E1120;--card2:#1A1E33;--tx2:#EEF0FA;--mut2:#9AA0BC;--ac2:#8E82F5;--line2:#262B45;--c12:#1F4A44;--c22:#4D2B45;--c32:#3A3260;--c42:#52382B;--sh2:none}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg2);color:var(--tx2);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:500;padding-top:env(safe-area-inset-top)}
+button{font:inherit;color:inherit;cursor:pointer}
+#app2{max-width:520px;margin:0 auto;padding:14px 18px 120px}
+.top2{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.top2 h1{margin:0;font-size:24px;font-weight:800}
+.rb2{width:46px;height:46px;border-radius:16px;border:0;background:var(--card2);box-shadow:var(--sh2);display:grid;place-items:center}
+.hero2{background:linear-gradient(135deg,#0F1230,#2B246B);color:#fff;border-radius:32px;padding:20px;box-shadow:0 16px 36px rgba(43,36,107,.3)}
+.hr2{display:flex;gap:14px;align-items:center}
+.av2{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#7C6CF0,#B58CF5);display:grid;place-items:center;font-size:26px;font-weight:800;flex:none}
+.hero2 h2{margin:0;font-size:24px;font-weight:800}.hero2 p{margin:3px 0 0;color:#B9BCDD;font-size:14px}
+.hb2{display:flex;gap:18px;align-items:center;margin-top:18px}
+.ring2{width:88px;height:88px;border-radius:50%;background:conic-gradient(#2FD3C0 var(--p2),rgba(255,255,255,.12) 0);display:grid;place-items:center;position:relative;flex:none}
+.ring2::before{content:"";position:absolute;inset:9px;border-radius:50%;background:#171A45}.ring2 b{position:relative;font-size:18px}
+.hb2 ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:14px}.hb2 li{display:flex;gap:8px;align-items:center}.hb2 li:first-child{color:#FFB070}
+.bds2{display:flex;justify-content:space-between;margin:20px 0 6px;gap:4px}
+.bd2{flex:1;text-align:center;font-size:12px;font-weight:700}.bd2 i{width:54px;height:54px;border-radius:50%;background:var(--c32);color:var(--ac2);display:grid;place-items:center;margin:0 auto 6px}
+.bd2 small{display:block;color:var(--mut2);font-weight:500;font-size:10px}.bd2.lk2{opacity:.4}.bd2.on2 i{background:#FFF3C4;color:#E0A100;box-shadow:0 0 0 2px #F5D86A}
+.sec2{display:flex;align-items:baseline;justify-content:space-between;margin:22px 0 4px}.sec2 h3{margin:0;font-size:22px;font-weight:800}.sec2 h3 span{color:var(--mut2);font-weight:500}
+.lnk2{border:0;background:none;color:var(--ac2);font-weight:800;font-size:14px;padding:6px 0}
+.act2{position:relative;border-radius:28px;padding:16px;margin:12px 0;overflow:hidden;cursor:pointer}
+.act2 .at2{display:flex;align-items:center;gap:10px}.act2 .at2 b{flex:1;font-size:15px}
+.ai2{width:34px;height:34px;border-radius:50%;background:var(--card2);display:grid;place-items:center;font-style:normal}
+.chip22{display:inline-flex;gap:4px;align-items:center;background:var(--card2);border-radius:99px;padding:5px 10px;font-size:12px;font-weight:700}
+.act2 p{margin:16px 0 18px;font-size:16px;font-weight:700;max-width:80%}
+.ab2{display:flex;justify-content:space-between;align-items:center}.ab2 small{color:var(--mut2);font-size:12px;font-weight:700}
+.go2{width:42px;height:42px;border-radius:50%;background:var(--card2);display:grid;place-items:center;border:0;flex:none}
+.dc2{position:absolute;right:76px;bottom:20px;font-size:22px;letter-spacing:12px;opacity:.28;transform:rotate(-8deg);pointer-events:none}
+.m12{background:var(--c12)}.m22{background:var(--c22)}.m32{background:var(--c32)}.m42{background:var(--c42)}
+nav{position:fixed;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom));max-width:492px;margin:0 auto;background:var(--card2);border-radius:32px;box-shadow:0 10px 30px rgba(40,30,100,.16);display:flex;padding:8px;gap:4px}
+nav button{flex:1;border:0;background:none;color:var(--mut2);font-size:12px;font-weight:700;padding:8px 4px;border-radius:24px;display:grid;gap:3px;justify-items:center}
+nav .on2{background:var(--c32);color:var(--tx2)}
+.tiles2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
+.tile2{background:var(--card2);border-radius:26px;padding:16px;text-align:center;box-shadow:var(--sh2)}.tile2 i{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;margin:0 auto 8px;font-style:normal}.tile2 b{display:block;font-size:26px;font-weight:800}.tile2 small{color:var(--mut2)}
+.chips2{display:flex;gap:8px;margin:12px 0}.cp2{flex:1;border:0;border-radius:99px;padding:11px;background:var(--card2);font-weight:800;font-size:14px;box-shadow:var(--sh2)}.cp2.on2{background:var(--tx2);color:var(--bg2)}
+.tc2{background:var(--card2);border-radius:28px;padding:16px;margin:12px 0;box-shadow:var(--sh2)}
+.th2{display:flex;align-items:center;gap:10px}.th2 b{flex:1;font-size:17px;font-weight:800}.th2 span{font-weight:800;color:var(--ac2)}.th2 .go2{width:36px;height:36px;background:var(--c32)}
+.bar2{height:9px;background:var(--line2);border-radius:9px;overflow:hidden;margin:12px 0 6px}.bar2 i{display:block;height:100%;background:var(--ok2);border-radius:9px}
+.mut2{color:var(--mut2);font-size:13px}.lbl2{font-size:12px;font-weight:700;color:var(--mut2);margin:10px 0 5px}
+.sqs2{display:flex;flex-wrap:wrap;gap:5px}.sq2{width:26px;height:26px;border-radius:9px;font-size:11px;font-weight:800;display:grid;place-items:center;background:var(--line2);color:var(--mut2)}
+.sq2.l2{background:#CFE2F8;color:#2D5E99}.sq2.m2{background:#C9EBDA;color:#1D7A56}.sq2.r2{background:#FBD9C6;color:#B5562A}
+:root[data-t2=dark] .sq2.l2{background:#2D4468;color:#BBD4F3}:root[data-t2=dark] .sq2.m2{background:#1F4A44;color:#9BE2C4}:root[data-t2=dark] .sq2.r2{background:#5A3A2C;color:#F7BFA0}
+.lg2{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mut2);margin:6px 2px}.lg2 i{display:inline-block;width:10px;height:10px;border-radius:4px;margin-right:4px;vertical-align:-1px}
+.row2{display:flex;align-items:center;gap:12px;background:var(--card2);border-radius:22px;padding:14px 16px;margin:10px 0;box-shadow:var(--sh2)}
+.row2 b{font-size:18px;font-weight:800}.row2 .sp2{flex:1}.dots2{letter-spacing:3px;color:var(--ok2)}
+.btn2{border:0;background:var(--tx2);color:var(--bg2);font-weight:800;border-radius:20px;padding:15px 22px;font-size:16px}.btn2.s2{padding:8px 14px;font-size:13px;border-radius:14px;background:var(--c32);color:var(--tx2)}
+.empty2{background:var(--c12);border-radius:26px;padding:20px;margin:12px 0}.empty2 b{font-size:17px}.empty2 p{margin:6px 0 0;color:var(--mut2);font-size:14px}
+#ses2{position:fixed;inset:0;background:var(--bg2);z-index:9;display:none;overflow:auto}#ses2.on2{display:block}
+.in2{max-width:520px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top)) 18px calc(24px + env(safe-area-inset-bottom));min-height:100%;display:flex;flex-direction:column}
+.sb2{display:flex;align-items:center;gap:12px}.sb2 .bar2{flex:1;margin:0}
+.q2{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;text-align:center}
+.qc2{background:var(--c32);border-radius:36px;padding:34px 16px;font-size:64px;font-weight:800}
+.q2 input{width:100%;font:inherit;font-size:38px;font-weight:800;text-align:center;border:0;border-radius:26px;padding:16px;background:var(--card2);color:var(--tx2);box-shadow:var(--sh2)}.q2 input:focus{outline:3px solid var(--ac2)}
+.fb2{font-size:22px;font-weight:800;min-height:28px}
+.chip2{display:inline-flex;align-items:center;gap:8px;background:var(--card2);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:700;box-shadow:var(--sh2)}.chip2 i{width:12px;height:12px;border-radius:50%}
+.hint2{background:var(--c42);border-radius:20px;padding:12px 14px;font-size:16px;font-weight:700;margin-top:10px}
+.sum2{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center}
+.st2{display:flex;align-items:center;gap:10px;margin:8px 0}.st2 b{flex:1}.st2 button{width:42px;height:42px;border-radius:14px;border:0;background:var(--c32);font-size:22px;font-weight:800}.st2 span{min-width:36px;text-align:center;font-size:20px;font-weight:800}
+ul.sc2{padding-left:18px;color:var(--mut2);font-size:14px;line-height:1.5;margin:6px 0}
+.dr2{display:flex;justify-content:space-between;background:var(--card2);border-radius:16px;padding:10px 14px;margin:6px 0;font-size:14px}.dr2.on2{background:var(--c12);font-weight:800}
+
+:root{--okt2:#157A52;--not2:#C4284A}:root[data-t2=dark]{--okt2:#6FDC9A;--not2:#FF8AA5}
+#ses2{inset:auto;top:0;left:0;right:0;height:100vh;height:100dvh;-webkit-overflow-scrolling:touch}
+.sb2{gap:10px}.sb2 .bar2{margin:0}.in2>.bar2{margin:12px 0 0}
+.qc2{background:var(--c32);border-radius:30px;padding:16px 16px 20px;margin-top:14px;text-align:center;font-size:16px;font-weight:500}
+.qq2{font-size:56px;font-weight:800;line-height:1.1;margin:6px 0 14px}
+.qc2 input{width:100%;font:inherit;font-size:34px;font-weight:800;text-align:center;border:0;border-radius:22px;padding:12px;background:var(--card2);color:var(--tx2);box-shadow:var(--sh2)}
+.qc2 input:focus{outline:3px solid var(--ac2)}
+.qc2 .btn2{width:100%;margin-top:10px;padding:14px}
+.tg2{display:none;background:var(--card2);border-radius:99px;padding:3px 12px;font-size:12px;font-weight:800;color:var(--ac2)}
+#fb2{margin-top:14px}.fbt2{font-size:26px;font-weight:800}.fbt2.ok2{color:var(--okt2)}.fbt2.no2{color:var(--not2)}
+.ans2{font-size:24px;margin:2px 0 10px}.ans2 b{font-size:30px}
+.t32{grid-template-columns:repeat(3,1fr)}.t32 .tile2{padding:12px 4px}.t32 .tile2 b{font-size:20px}.t32 .tile2 small{font-size:12px}
+</style>
+</head>
+<body>
+<div id="app2"></div>
+<nav id="nav2"></nav>
+<div id="ses2"></div>
+<script>
+const $2=s=>document.querySelector(s);
+const td2=(d=new Date())=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const ago2=n=>{const d=new Date();d.setDate(d.getDate()-n);return td2(d)};
+let S2={items:{},days:{},streak:0,best:0,sess:0,last:'',theme:''};
+try{Object.assign(S2,JSON.parse(localStorage.getItem('tabuada-manu2')||'{}'))}catch(e){}
+S2.plan=S2.plan||{b:14,a:14,start:S2.start||td2()};
+const save2=()=>{try{localStorage.setItem('tabuada-manu2',JSON.stringify(S2))}catch(e){}};save2();
+const streak2=()=>S2.last===td2()||S2.last===ago2(1)?S2.streak:0;
+function theme2(){const t=S2.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.dataset.t2=t;document.querySelector('meta[name=theme-color]').content=t=='dark'?'#0E1120':'#F4F5FB'}theme2();
+const P2={home:'<path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',rep:'<path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3"/>',chart:'<path d="M4 20V10m6 10V4m6 16v-7m5 7H3"/>',moon:'<path d="M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>',arr:'<path d="M7 17L17 7M8 7h9v9"/>',fire:'<path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-10z"/>',chk:'<path d="M5 12l5 5 9-10"/>',star:'<path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3l-5.6 3 1.2-6.3L3 9.6l6.3-.8z"/>',tro:'<path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3m10-5h3v2a3 3 0 0 1-3 3M12 14v4m-4 3h8"/>',cro:'<path d="M3 8l4 4 5-7 5 7 4-4-2 11H5z"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4m8-4v4"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',clk:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',bk:'<path d="M5 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H5zm14 0h-5"/>'};
+const ic2=(n,s=22)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${P2[n]}</svg>`;
+const R2=(a,b)=>{const r=[];for(let i=a;i<=b;i++)r.push(i);return r};
+const rng2={b:R2(3,9),a:R2(3,9),g:R2(2,20)},tbls2={b:R2(3,9),a:R2(11,20),g:R2(2,20)};
+const NM2={b:'Básica',a:'Avançada',g:'Geral'};
+const key2=p=>p[0]+'x'+p[1];
+function pool2(m){const A=[];
+ if(m=='b')R2(3,9).forEach(a=>R2(3,9).forEach(b=>A.push([a,b])));
+ if(m=='a')R2(11,20).forEach(a=>R2(3,9).forEach(b=>{A.push([a,b]);A.push([b,a])}));
+ if(m=='g')R2(2,20).forEach(a=>R2(2,20).forEach(b=>A.push([a,b])));return A}
+function tp2(t,m){const A=[];rng2[m].forEach(x=>{A.push([t,x]);if(x!=t)A.push([x,t])});return A}
+const it2=k=>{const v=S2.items[k]||{};return{n:v.n||0,c:v.c??Math.max(0,(v.n||0)-(v.w||0)),s:v.s||0,w:v.w||0,t:v.t||0,r:!!v.r,m:!!v.m}};
+const avgT2=ks=>{let n=0,t=0;ks.forEach(k=>{const v=S2.items[k]||{};if(v.t){n+=v.n;t+=v.t}});return n?t/n:0};
+const mastered2=()=>Object.values(S2.items).filter(v=>v.m).length;
+const accOf2=ks=>{let n=0,c=0;ks.forEach(k=>{const v=it2(k);n+=v.n;c+=v.c});return n?Math.round(c/n*100):null};
+function info2(){const d=Math.floor((new Date(td2())-new Date(S2.plan.start))/864e5)+1,{b,a}=S2.plan;
+ if(d<=b)return{ph:'b',d,k:b,dd:d,tabs:tbls2.b};if(d<=b+a)return{ph:'a',d,k:a,dd:d-b,tabs:tbls2.a};return{ph:'g',d,dd:d-b-a}}
+const uOf2=f=>Math.min(f.tabs.length,Math.floor((f.dd-1)*f.tabs.length/f.k)+1);
+let tab2='home',ptab2='b',ses2=null,t02=0;
+function render2(){
+ $2('#nav2').innerHTML=[['home','home','Início'],['rev','rep','Revisão'],['prog','chart','Progresso']].map(x=>`<button class="${tab2==x[0]?'on2':''}" onclick="tab2='${x[0]}';render2();scrollTo(0,0)">${ic2(x[1])}${x[2]}</button>`).join('');
+ const dk=document.documentElement.dataset.t2=='dark',app=$2('#app2');
+ const top=t=>`<div class="top2"><h1>${t}</h1><button class="rb2" onclick="flip2()" aria-label="Modo noturno">${ic2(dk?'sun':'moon',20)}</button></div>`;
+ if(tab2=='home'){
+  const f=info2(),dd=S2.days[td2()]||{q:0},pc=Math.min(100,Math.round(dd.q/20*100)),ms=mastered2();
+  const B=[['Primeira','1ª sessão','star',S2.sess>=1],['Em chamas','3 dias','fire',S2.best>=3],['Dominou','10 contas','chk',ms>=10],['Campeã','7 dias','tro',S2.best>=7],['Lenda','50 contas','cro',ms>=50]];
+  const nw=f.ph=='g'?null:f.tabs[uOf2(f)-1];
+  const card=(c,i,t,chip,desc,meta,fn)=>`<div class="act2 ${c}" onclick="${fn}"><div class="at2"><i class="ai2">${ic2(i,18)}</i><b>${t}</b><span class="chip22">${chip}</span></div><p>${desc}</p><div class="ab2"><small>${meta}</small><span class="go2">${ic2('arr',20)}</span></div><span class="dc2">× ÷ + =</span></div>`;
+  const ac=m=>{const a=accOf2(pool2(m).map(key2));return`${ic2('star',12)} ${a==null?'–':a+'%'}`};
+  app.innerHTML=top('Início')+`<div class="hero2"><div class="hr2"><div class="av2">M</div><div><h2>Olá, Manu</h2></div></div>
+  <div class="hb2"><div class="ring2" style="--p2:${pc}%"><b>${pc}%</b></div><ul><li>${ic2('fire',17)}${streak2()} dias seguidos</li><li>${ic2('chk',17)}${ms} contas dominadas</li><li>${ic2('cal',17)}Dia ${f.d} do plano</li></ul></div></div>
+  <div class="bds2">${B.map(b=>`<div class="bd2 ${b[3]?'on2':'lk2'}"><i>${ic2(b[2],24)}</i>${b[0]}<small>${b[1]}</small></div>`).join('')}</div>
+  <div class="sec2"><h3>Atividades de hoje <span>(3)</span></h3><button class="lnk2" onclick="plan2()">Ver plano</button></div>
+  ${card('m22','bk','Básica',ac('b'),'Tabuadas do 3 ao 9','Treino livre','start2(\'b\')')}
+  ${card('m32','bk','Avançada',ac('a'),'Tabuadas do 11 ao 20','Treino livre','start2(\'a\')')}
+  ${card('m42','bk','Geral',ac('g'),'Tabuadas do 2 ao 20','Treino livre','start2(\'g\')')}`;
+ }
+ if(tab2=='rev'){
+  const L=Object.entries(S2.items).filter(([k,v])=>v.r).sort((a,b)=>b[1].w-a[1].w);
+  app.innerHTML=top('Revisão')+`<p class="mut2" style="margin:0 2px 8px">Cada conta fica aqui até você acertar 3 vezes seguidas no Início. 3 × 7 e 7 × 3 são contas diferentes.</p>`+(L.length?L.map(([k,v])=>`<div class="row2"><b>${k.replace('x',' × ')}</b><span class="sp2"></span><span class="dots2">${'●'.repeat(v.s)}${'○'.repeat(3-v.s)}</span><span class="mut2">${v.w} erro${v.w>1?'s':''}</span></div>`).join(''):`<div class="empty2"><b>Nada para revisar</b><p>Quando você errar uma conta no Início, ela aparece aqui.</p></div>`);
+ }
+ if(tab2=='prog'){
+  const D=S2.days,t=D[td2()]||{q:0,c:0,w:0,t:0,errs:[]},m=ptab2;
+  const st=p=>{const v=it2(key2(p));return v.r?'r2':v.m?'m2':v.n?'l2':''};
+  const sq=(p,i)=>`<span class="sq2 ${st(p)}" title="${p[0]} × ${p[1]}">${p[i]}</span>`;
+  const T=tbls2[m].map(tb=>{const A=rng2[m].map(x=>[tb,x]),B=rng2[m].filter(x=>x!=tb).map(x=>[x,tb]),all=[...A,...B],ks=all.map(key2),md=all.filter(p=>it2(key2(p)).m).length,a=accOf2(ks),av=avgT2(ks);
+   return`<div class="tc2"><div class="th2"><b>Tabuada do ${tb}</b><span>${a==null?'–':a+'%'+(av?' · '+fmt2(av):'')}</span><button class="go2" onclick="startT2(${tb},'${m}')" aria-label="Treinar">${ic2('arr',16)}</button></div><div class="bar2"><i style="width:${md/all.length*100}%"></i></div><div class="mut2">${md} de ${all.length} contas dominadas</div><div class="lbl2">${tb} × ?</div><div class="sqs2">${A.map(p=>sq(p,1)).join('')}</div><div class="lbl2">? × ${tb}</div><div class="sqs2">${B.map(p=>sq(p,0)).join('')}</div></div>`}).join('');
+  const keys=Object.keys(D).sort().reverse().slice(0,14);
+  app.innerHTML=top('Progresso')+`<div class="tiles2 t32"><div class="tile2"><i style="background:var(--c32);color:var(--ac2)">${ic2('bk',22)}</i><b>${t.q}</b><small>questões hoje</small></div><div class="tile2"><i style="background:var(--c12);color:var(--ok2)">${ic2('chk',22)}</i><b>${t.q?Math.round(t.c/t.q*100)+'%':'–'}</b><small>acertos hoje</small></div><div class="tile2"><i style="background:var(--c42);color:#C77A3E">${ic2('clk',22)}</i><b>${t.q?fmt2(t.t/t.q):'–'}</b><small>tempo médio</small></div></div>
+  <div class="chips2">${['b','a','g'].map(x=>`<button class="cp2 ${m==x?'on2':''}" onclick="ptab2='${x}';render2()">${NM2[x]}</button>`).join('')}</div>
+  <div class="lg2"><span><i style="background:var(--line2)"></i>não vista</span><span><i style="background:#CFE2F8"></i>treinando</span><span><i style="background:#C9EBDA"></i>dominada</span><span><i style="background:#FBD9C6"></i>na revisão</span></div>${T}
+  <div class="sec2"><h3>Por dia</h3></div>`+(keys.length?keys.map(d=>{const v=D[d];return`<div class="row2"><div class="sp2"><b style="font-size:16px">${d.slice(8)}/${d.slice(5,7)}</b><div class="mut2">${v.q} questões · ${v.c} certas · ${fmt2(v.t/v.q)} em média</div></div>${v.errs.length?`<button class="btn2 s2" onclick="replay2('${d}')">Refazer erros</button>`:''}</div>`}).join(''):`<div class="empty2"><b>Sem dados ainda</b><p>Faça a primeira sessão para ver sua evolução.</p></div>`);
+ }}
+function flip2(){S2.theme=document.documentElement.dataset.t2=='dark'?'light':'dark';save2();theme2();render2()}
+function sched2(ph,k){const T=tbls2[ph],n=T.length,r=[];for(let d=1;d<=k;d++){const u=Math.min(n,Math.floor((d-1)*n/k)+1),L=r[r.length-1];if(L&&L.t==T[u-1])L.e=d;else r.push({t:T[u-1],s:d,e:d})}return r}
+function plan2(){
+ const f=info2(),el=$2('#ses2'),{b,a}=S2.plan,row=(ph,off)=>sched2(ph,ph=='b'?b:a).map(r=>{const s=r.s+off,e=r.e+off,on=f.d>=s&&f.d<=e;return`<div class="dr2 ${on?'on2':''}"><span>${s==e?'Dia '+s:'Dias '+s+' a '+e}</span><span>Tabuada do ${r.t}</span></div>`}).join('');
+ el.className='on2';el.innerHTML=`<div class="in2"><div class="sb2"><button class="rb2" onclick="quit2()" aria-label="Fechar">${ic2('x',20)}</button><h2 style="margin:0;font-size:22px">Plano de estudos</h2></div>
+ <div class="sec2"><h3 style="font-size:18px">Quantos dias em cada fase</h3></div>
+ <div class="st2"><b>Básica (3 a 9)</b><button onclick="setP2('b',-1)">−</button><span>${b}</span><button onclick="setP2('b',1)">+</button></div>
+ <div class="st2"><b>Avançada (11 a 20)</b><button onclick="setP2('a',-1)">−</button><span>${a}</span><button onclick="setP2('a',1)">+</button></div>
+ <p class="mut2">Depois disso vem a Geral (2 a 20), sem prazo. Mínimo: 7 dias na Básica e 10 na Avançada, uma tabuada nova por fase.</p>
+ <div class="sec2"><h3 style="font-size:18px">Como funciona (baseado em pesquisa)</h3></div>
+ <ul class="sc2"><li>Sessões curtas todos os dias fixam mais que maratonas (prática espaçada).</li><li>Responder digitando, sem ver a resposta, treina a memória (recuperação ativa).</li><li>Cada sessão tem a tabuada nova, as anteriores e seus erros misturados (intercalação).</li><li>Uma conta errada só sai da Revisão depois de 3 acertos seguidos.</li><li>O tempo é só informação, nunca castigo.</li></ul>
+ <div class="sec2"><h3 style="font-size:18px">Básica</h3></div>${row('b',0)}<div class="sec2"><h3 style="font-size:18px">Avançada</h3></div>${row('a',b)}
+ <div class="dr2"><span>Dia ${b+a+1} em diante</span><span>Geral</span></div>
+ <button class="btn2" style="margin-top:18px" onclick="if(confirm('Recomeçar o plano a partir de hoje?')){S2.plan.start=td2();save2();plan2()}">Recomeçar plano hoje</button></div>`}
+function setP2(k,v){const mn={b:7,a:10}[k],mx={b:30,a:40}[k];S2.plan[k]=Math.max(mn,Math.min(mx,S2.plan[k]+v));save2();plan2()}
+let clk2=null;
+const mmss2=ms=>{const t=Math.round(ms/1000);return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')};
+const fmt2=ms=>(ms/1000).toFixed(1).replace('.',',')+' s';
+const start2=m=>begin2({pool:pool2(m)});
+const startT2=(t,m)=>begin2({pool:tp2(t,m)});
+function replay2(d){const ks=[...new Set(S2.days[d].errs)];begin2({list:ks.map(k=>k.split('x').map(Number)),total:ks.length,replay:true})}
+const sh2=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+function startPlan2(){
+ const f=info2();if(f.ph=='g')return start2('g');
+ const u=uOf2(f),nw=f.tabs[u-1],take=(a,n)=>{const o=[];while(o.length<n&&a.length)o.push(...sh2(a).slice(0,n-o.length));return o};
+ const N=tp2(nw,f.ph),O=f.tabs.slice(0,u-1).flatMap(t=>tp2(t,f.ph)),V=Object.keys(S2.items).filter(k=>S2.items[k].r).map(k=>k.split('x').map(Number));
+ const a=u>1?10:16,b=u>1?6:0;
+ let L=sh2([...take(N,a),...take(O,b),...take(V.length?V:(O.length?O:N),20-a-b)]);
+ for(let i=1;i<L.length;i++)if(key2(L[i])==key2(L[i-1])){const j=L.findIndex((x,jj)=>jj>i&&key2(x)!=key2(L[i-1]));if(j>0)[L[i],L[j]]=[L[j],L[i]]}
+ begin2({list:L,total:L.length})}
+function pickQ2(){
+ if(ses2.list)return ses2.list[ses2.bi];
+ const rv=ses2.pool.filter(p=>it2(key2(p)).r),un=a=>a.filter(p=>!ses2.seen[key2(p)]);
+ let c=rv.length&&Math.random()<1/3?un(rv):[];if(!c.length)c=un(ses2.pool);if(!c.length)c=ses2.pool;
+ const sc=p=>it2(key2(p)).n+(ses2.seen[key2(p)]||0)*50,m=Math.min(...c.map(sc)),low=c.filter(p=>sc(p)<=m+1&&key2(p)!=ses2.lastK),L=low.length?low:c;
+ return L[Math.floor(Math.random()*L.length)]}
+function begin2(o){
+ ses2=Object.assign({bi:0,total:20,ok:0,seen:{},replay:false,rq:[],miss:{},ms:0,n:0,t0:Date.now(),phase:'ask'},o);
+ const el=$2('#ses2');el.className='on2';el.scrollTop=0;
+ el.innerHTML=`<div class="in2"><div class="sb2"><button class="rb2" onclick="quit2()" aria-label="Sair">${ic2('x',20)}</button><span class="chip2" id="clk2">⏱ 0:00</span><span class="mut2" id="cnt2" style="margin-left:auto"></span></div><div class="bar2"><i id="bar2"></i></div>
+ <div class="qc2"><span class="tg2" id="tg2">Repita</span><div class="qq2" id="qq2"></div><input id="in2" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-label="Resposta" placeholder="?"><button class="btn2" id="go2" onclick="act2()">Responder</button><div id="fb2"></div></div></div>`;
+ clearInterval(clk2);clk2=setInterval(()=>{const e=$2('#clk2');if(!e)return clearInterval(clk2);e.textContent='⏱ '+mmss2(Date.now()-ses2.t0)},500);
+ const i=$2('#in2');i.onkeydown=e=>{if(e.key=='Enter'){e.preventDefault();act2()}};
+ i.onfocus=()=>setTimeout(()=>i.scrollIntoView({block:'center',behavior:'smooth'}),300);
+ next2()}
+function next2(){
+ let r=ses2.rq.findIndex(x=>x.w<=0);if(r<0&&ses2.bi>=ses2.total&&ses2.rq.length)r=0;
+ let q,rep=false;
+ if(r>=0){q=ses2.rq.splice(r,1)[0].q;rep=true}
+ else if(ses2.bi<ses2.total){q=pickQ2();ses2.bi++;ses2.seen[key2(q)]=(ses2.seen[key2(q)]||0)+1}
+ else return done2();
+ ses2.rq.forEach(x=>x.w--);ses2.q=q;ses2.rep=rep;ses2.lastK=key2(q);ses2.phase='ask';
+ $2('#qq2').textContent=q[0]+' × '+q[1];$2('#tg2').style.display=rep?'inline-block':'none';
+ $2('#cnt2').textContent=Math.min(ses2.bi,ses2.total)+'/'+ses2.total+(ses2.rq.length?' · '+ses2.rq.length+' para repetir':'');
+ $2('#bar2').style.width=((rep?ses2.bi:ses2.bi-1)/ses2.total*100)+'%';
+ const i=$2('#in2');i.value='';i.readOnly=false;i.placeholder='?';$2('#fb2').innerHTML='';$2('#go2').textContent='Responder';i.focus();t02=performance.now()}
+function hint2(a,b){
+ if(a>10||b>10){const[x,y]=a>10?[a,b]:[b,a];return`${x} × ${y} = 10 × ${y} + ${x-10} × ${y} = ${10*y} + ${(x-10)*y}`}
+ if(b>5)return`${a} × ${b} = ${a} × 5 + ${a} × ${b-5} = ${a*5} + ${a*(b-5)}`;
+ return`${a} × ${b} = ${a} × ${b-1} + ${a} = ${a*(b-1)} + ${a}`}
+function record2(k,ok,ms){
+ const o=S2.items[k]=S2.items[k]||{s:0,r:false,n:0,w:0,c:0,t:0,m:false};
+ o.n++;o.t=(o.t||0)+ms;
+ if(ok){o.c=(o.c||0)+1;o.s++;if(o.s>=3){o.m=true;if(o.r){o.r=false;o.s=0}}}else{o.s=0;o.r=true;o.m=false;o.w++}
+ const day=S2.days[td2()]=S2.days[td2()]||{q:0,c:0,w:0,t:0,errs:[]};
+ day.q++;day.t+=ms;if(ok)day.c++;else{day.w++;day.errs.push(k)}
+ if(S2.last!==td2()){S2.streak=S2.last===ago2(1)?S2.streak+1:1;S2.last=td2();S2.best=Math.max(S2.best||0,S2.streak)}
+ save2()}
+function act2(){
+ if(!ses2)return;const p=ses2.phase;
+ if(p=='ask')check2();else if(p=='ok')next2();
+ else if(p=='fix'){const v=$2('#in2').value.trim();if(/^\d+$/.test(v)&&+v===ses2.q[0]*ses2.q[1])next2();else{$2('#in2').value='';$2('#in2').focus()}}}
+function check2(){
+ const i=$2('#in2'),v=i.value.trim();if(!/^\d+$/.test(v))return;
+ const ms=Math.round(performance.now()-t02),[a,b]=ses2.q,ans=a*b,right=+v===ans,k=key2(ses2.q);
+ if(!ses2.rep){ses2.n++;ses2.ms+=ms;if(right)ses2.ok++;else ses2.miss[k]=(ses2.miss[k]||0)+1;if(!ses2.replay)record2(k,right,ms)}
+ if(!right)ses2.rq.push({q:ses2.q,w:3});
+ const s=ms/1000,col=s<5?'var(--ok2)':s<10?'var(--bl2)':'var(--pe2)',lb=s<5?'Rápido':s<10?'Tranquilo':'Pensou um pouco';
+ const chip=`<span class="chip2"><i style="background:${col}"></i>⏱ ${fmt2(ms)} · ${lb}</span>`,fb=$2('#fb2');
+ if(right){ses2.phase='ok';i.readOnly=true;fb.innerHTML=`<div class="fbt2 ok2">Certo! ✓</div>${chip}`;$2('#go2').textContent='Próxima'}
+ else{ses2.phase='fix';i.value='';i.placeholder=ans;fb.innerHTML=`<div class="fbt2 no2">Errou</div><div class="ans2">${a} × ${b} = <b>${ans}</b></div>${chip}<div class="hint2">${hint2(a,b)}</div><p class="mut2">Digite ${ans} para continuar</p>`;$2('#go2').textContent='Continuar'}
+ i.focus()}
+function quit2(){clearInterval(clk2);$2('#ses2').className='';ses2=null;render2()}
+function done2(){
+ clearInterval(clk2);if(!ses2.replay){S2.sess=(S2.sess||0)+1;save2()}
+ const tot=Date.now()-ses2.t0,w=Object.entries(ses2.miss).sort((x,y)=>y[1]-x[1]).map(([k,n])=>{const[a,b]=k.split('x').map(Number);return`<li>${a} × ${b} = <b>${a*b}</b> <span class="mut2">(${n} erro${n>1?'s':''})</span></li>`}).join('');
+ $2('#ses2').innerHTML=`<div class="in2"><div class="sb2"><button class="rb2" onclick="quit2()" aria-label="Fechar">${ic2('x',20)}</button><h2 style="margin:0;font-size:22px">Sessão concluída</h2></div>
+ <div class="tiles2 t32" style="margin-top:16px"><div class="tile2"><b>${ses2.ok}/${ses2.n}</b><small>certas de primeira</small></div><div class="tile2"><b>${ses2.n?fmt2(ses2.ms/ses2.n):'–'}</b><small>tempo médio</small></div><div class="tile2"><b>${mmss2(tot)}</b><small>tempo total</small></div></div>
+ ${w?`<div class="tc2"><div class="th2"><b>Para reforçar</b></div><ul class="sc2">${w}</ul></div>`:`<div class="empty2"><b>Nenhum erro!</b><p>Todas certas de primeira.</p></div>`}
+ <button class="btn2" style="margin-top:14px;width:100%" onclick="quit2()">Voltar ao início</button></div>`}
+render2();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
